@@ -27,13 +27,13 @@ import ua.edu.nau.PersonalFitnesAssistant.model.WorkoutPlan;
         WorkoutPlan.class
 }, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
-    public abstract UserParametersDao userDao();
+    public abstract UserParametersDao userParametersDao();
 
     public abstract ExerciseDao exerciseDao();
 
     public abstract ExerciseGroupDao exerciseGroupDao();
 
-    public abstract SetDao SetDao();
+    public abstract SetDao setDao();
 
     public abstract TrainingDao trainingDao();
 
