@@ -6,10 +6,18 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.util.ArrayList;
+
 import ua.edu.nau.PersonalFitnesAssistant.R;
+import ua.edu.nau.PersonalFitnesAssistant.adapters.WorkoutDayArrayAdapter;
+import ua.edu.nau.PersonalFitnesAssistant.model.WorkoutDay;
+import ua.edu.nau.PersonalFitnesAssistant.model.WorkoutPlan;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,7 +37,13 @@ public class TrainingFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private static WorkoutDayArrayAdapter adapter;
+
     private OnFragmentInteractionListener mListener;
+    private Context mContext;
+    private ListView listView;
+    private WorkoutPlan workoutPlan;
+    private ArrayList<WorkoutDay> workoutDays;
 
     public TrainingFragment() {
         // Required empty public constructor
@@ -54,17 +68,35 @@ public class TrainingFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+//        if (getArguments() != null) {
+//            mParam1 = getArguments().getString(ARG_PARAM1);
+//            mParam2 = getArguments().getString(ARG_PARAM2);
+//        }
+        if (getActivity() != null)
+            mContext = getActivity().getApplicationContext();
+
+        //Creating stub data for debug
+        workoutPlan = new WorkoutPlan(1L, "Chest, Arms");
+
+        workoutDays = new ArrayList<>();
+        workoutDays.add(new WorkoutDay(2L, 1L, 120, 1));
+        workoutDays.add(new WorkoutDay(3L, 1L, 120, 2));
+        workoutDays.add(new WorkoutDay(4L, 1L, 120, 3));
+
+
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_training, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        listView = view.findViewById(R.id.listView_workout_days);
+        adapter = new WorkoutDayArrayAdapter(mContext, workoutDays);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

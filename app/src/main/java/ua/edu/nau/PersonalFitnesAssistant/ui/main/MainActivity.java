@@ -1,4 +1,4 @@
-package ua.edu.nau.PersonalFitnesAssistant;
+package ua.edu.nau.PersonalFitnesAssistant.ui.main;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,10 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
-import ua.edu.nau.PersonalFitnesAssistant.ui.main.ExercisesFragment;
-import ua.edu.nau.PersonalFitnesAssistant.ui.main.ProgressFragment;
-import ua.edu.nau.PersonalFitnesAssistant.ui.main.SectionsPagerAdapter;
-import ua.edu.nau.PersonalFitnesAssistant.ui.main.TrainingFragment;
+import ua.edu.nau.PersonalFitnesAssistant.R;
 
 public class MainActivity extends AppCompatActivity implements TrainingFragment.OnFragmentInteractionListener, ExercisesFragment.OnFragmentInteractionListener, ProgressFragment.OnFragmentInteractionListener {
 

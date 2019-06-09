@@ -3,4 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.TrainingFragment" />
+    tools:context=".ui.main.TrainingFragment">
+
+    <ListView
+        android:id="@+id/listView_workout_days"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C8E6C9"
+        android:footerDividersEnabled="true"
+        android:headerDividersEnabled="true" />
+</FrameLayout>

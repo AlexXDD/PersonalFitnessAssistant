@@ -7,4 +7,16 @@ import androidx.room.PrimaryKey;
 public class ExerciseGroup {
     @PrimaryKey
     String name;
+
+    public ExerciseGroup(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
