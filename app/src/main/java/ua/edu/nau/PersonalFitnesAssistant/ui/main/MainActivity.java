@@ -2,6 +2,7 @@ package ua.edu.nau.PersonalFitnesAssistant.ui.main;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -28,6 +29,11 @@ public class MainActivity extends AppCompatActivity implements TrainingFragment.
 
     @Override
     public void onFragmentInteraction(Uri uri) {
+
+    }
+
+    //Method for adding new workout day to current workout plan
+    public void onAddNewWorkoutDayButtonClick(View view) {
 
     }
 }

@@ -6,4 +6,7 @@
     <string name="tab_text_3">Progress</string>
     <string name="approximate_time_text">~ %1$d min</string>
     <string name="day_number_text">Day %1$d:</string>
+    <string name="curent_workout_plan_text">Current workout plan</string>
+    <string name="change_plan_btn_text">Change plan</string>
+    <string name="add_workout_day_text">Add workout day</string>
 </resources>

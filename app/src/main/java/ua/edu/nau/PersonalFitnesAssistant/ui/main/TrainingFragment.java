@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -41,7 +42,9 @@ public class TrainingFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private Context mContext;
+
     private ListView listView;
+
     private WorkoutPlan workoutPlan;
     private ArrayList<WorkoutDay> workoutDays;
 
@@ -76,9 +79,12 @@ public class TrainingFragment extends Fragment {
             mContext = getActivity().getApplicationContext();
 
         //Creating stub data for debug
-        workoutPlan = new WorkoutPlan(1L, "Bulking");
+        workoutPlan = new WorkoutPlan(1L, "Bulking split");
 
         workoutDays = new ArrayList<>();
+        workoutDays.add(new WorkoutDay(1L, "Chest, Arms", 120, 1));
+        workoutDays.add(new WorkoutDay(1L, "Legs, Back", 120, 2));
+        workoutDays.add(new WorkoutDay(1L, "Shoulders, Core", 120, 3));
         workoutDays.add(new WorkoutDay(1L, "Chest, Arms", 120, 1));
         workoutDays.add(new WorkoutDay(1L, "Legs, Back", 120, 2));
         workoutDays.add(new WorkoutDay(1L, "Shoulders, Core", 120, 3));
@@ -96,6 +102,15 @@ public class TrainingFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         listView = view.findViewById(R.id.listView_workout_days);
+
+        View headerView = getLayoutInflater().inflate(R.layout.workout_days_list_header, null);
+
+        //Setting workout plan name to header
+        TextView planName = headerView.findViewById(R.id.txtCurrentPlanName);
+        planName.setText(workoutPlan.getName());
+
+        //Adding header to listView
+        listView.addHeaderView(headerView);
         adapter = new WorkoutDayArrayAdapter(mContext, workoutDays);
         listView.setAdapter(adapter);
     }

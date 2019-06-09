@@ -65,7 +65,7 @@ public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase buildDatabase(final Context context) {
         return Room.databaseBuilder(context,
                 AppDatabase.class,
-                "my-database")
+                "assistant-database")
                 .addCallback(new Callback() {
                     @Override
                     public void onCreate(@NonNull final SupportSQLiteDatabase db) {

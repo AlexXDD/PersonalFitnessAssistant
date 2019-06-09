@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,5 +12,42 @@
         android:layout_height="match_parent"
         android:background="#C8E6C9"
         android:footerDividersEnabled="true"
-        android:headerDividersEnabled="true" />
-</FrameLayout>
+        android:headerDividersEnabled="true"
+        android:padding="10dp"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:scrollbarAlwaysDrawVerticalTrack="false"
+        android:scrollbars="none"
+        tools:listheader="@layout/workout_days_list_header"
+        tools:listitem="@layout/workout_days_list_item" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/ext_fab"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="54dp"
+        android:contentDescription="@string/add_workout_day_text"
+        android:gravity="center"
+        android:onClick="onAddNewWorkoutDayButtonClick"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="@string/add_workout_day_text"
+        android:textAlignment="center"
+        app:icon="@drawable/ic_add_circle_outline_black_24dp"
+        app:iconPadding="16dp"
+        app:layout_anchor="@+id/listView_workout_days"
+        app:layout_anchorGravity="bottom|center" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="#FFF"
+        android:padding="15dp"
+        android:text="AD BANNER STUB"
+        android:textAlignment="center"
+        app:layout_anchor="@+id/listView_workout_days"
+        app:layout_anchorGravity="bottom|center" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
