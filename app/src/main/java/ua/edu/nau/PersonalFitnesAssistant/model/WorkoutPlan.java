@@ -3,10 +3,10 @@ package ua.edu.nau.PersonalFitnesAssistant.model;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "workout_plan")
 public class WorkoutPlan {
     @PrimaryKey(autoGenerate = true)
-    Long id;
+    long id;
     String name;
 
     public WorkoutPlan(Long id, String name) {
@@ -14,11 +14,11 @@ public class WorkoutPlan {
         this.name = name;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

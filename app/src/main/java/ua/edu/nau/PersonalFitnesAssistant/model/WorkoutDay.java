@@ -3,52 +3,53 @@ package ua.edu.nau.PersonalFitnesAssistant.model;
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity(foreignKeys =
-@ForeignKey(
-        entity = WorkoutPlan.class,
-        parentColumns = "id",
-        childColumns = "workoutPlan"))
+@Entity(tableName = "workout_day",
+        foreignKeys =
+        @ForeignKey(
+                entity = WorkoutPlan.class,
+                parentColumns = "id",
+                childColumns = "workoutPlan"))
 public class WorkoutDay {
     @PrimaryKey(autoGenerate = true)
-    private
-    Long id;
-    private Long workoutPlan;
+    @NonNull
+    private long id;
+    private long workoutPlan;
     @NonNull
     private String name;
-    private Integer approximateTime;
-    private Integer order;
-    private Integer numOfExercises;
+    private int order;
+    private int approximateTime;
+    private int numOfExercises = 0;
 
-    public WorkoutDay(Long id, Long workoutPlan, @NonNull String name, Integer approximateTime, Integer order) {
-        this.id = id;
+    public WorkoutDay(long workoutPlan, @NonNull String name, int approximateTime, int order) {
         this.workoutPlan = workoutPlan;
         this.name = name;
         this.approximateTime = approximateTime;
         this.order = order;
     }
 
-    public WorkoutDay(Long id, Long workoutPlan, Integer approximateTime, Integer order) {
-        this.id = id;
+    @Ignore
+    public WorkoutDay(long workoutPlan, int approximateTime, int order) {
         this.workoutPlan = workoutPlan;
         this.approximateTime = approximateTime;
         this.order = order;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public Long getWorkoutPlan() {
+    public long getWorkoutPlan() {
         return workoutPlan;
     }
 
-    public void setWorkoutPlan(Long workoutPlan) {
+    public void setWorkoutPlan(long workoutPlan) {
         this.workoutPlan = workoutPlan;
     }
 
@@ -60,27 +61,27 @@ public class WorkoutDay {
         this.name = name;
     }
 
-    public Integer getApproximateTime() {
+    public int getApproximateTime() {
         return approximateTime;
     }
 
-    public void setApproximateTime(Integer approximateTime) {
+    public void setApproximateTime(int approximateTime) {
         this.approximateTime = approximateTime;
     }
 
-    public Integer getOrder() {
+    public int getOrder() {
         return order;
     }
 
-    public void setOrder(Integer order) {
+    public void setOrder(int order) {
         this.order = order;
     }
 
-    public Integer getNumOfExercises() {
+    public int getNumOfExercises() {
         return numOfExercises;
     }
 
-    public void setNumOfExercises(Integer numOfExercises) {
+    public void setNumOfExercises(int numOfExercises) {
         this.numOfExercises = numOfExercises;
     }
 }

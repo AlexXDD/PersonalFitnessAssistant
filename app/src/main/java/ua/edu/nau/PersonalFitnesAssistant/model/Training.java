@@ -1,10 +1,14 @@
 package ua.edu.nau.PersonalFitnesAssistant.model;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
 
 import java.sql.Timestamp;
+
+import ua.edu.nau.PersonalFitnesAssistant.typeConverters.DateTypeConverter;
 
 @Entity(foreignKeys = {
         @ForeignKey(
@@ -17,13 +21,15 @@ import java.sql.Timestamp;
                 parentColumns = "id",
                 childColumns = "workoutDay"
         )})
+@TypeConverters(DateTypeConverter.class)
 public class Training {
     @PrimaryKey
+    @NonNull
     Timestamp date;
     Timestamp userParameters;
-    Long workoutDay;
+    long workoutDay;
 
-    public Training(Timestamp date, Timestamp userParameters, Long workoutDay) {
+    public Training(@NonNull Timestamp date, Timestamp userParameters, long workoutDay) {
         this.date = date;
         this.userParameters = userParameters;
         this.workoutDay = workoutDay;
@@ -33,7 +39,7 @@ public class Training {
         return date;
     }
 
-    public void setDate(Timestamp date) {
+    public void setDate(@NonNull Timestamp date) {
         this.date = date;
     }
 
@@ -45,11 +51,11 @@ public class Training {
         this.userParameters = userParameters;
     }
 
-    public Long getWorkoutDay() {
+    public long getWorkoutDay() {
         return workoutDay;
     }
 
-    public void setWorkoutDay(Long workoutDay) {
+    public void setWorkoutDay(long workoutDay) {
         this.workoutDay = workoutDay;
     }
 }

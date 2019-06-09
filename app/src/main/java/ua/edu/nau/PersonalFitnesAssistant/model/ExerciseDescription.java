@@ -1,16 +1,19 @@
 package ua.edu.nau.PersonalFitnesAssistant.model;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(foreignKeys = @ForeignKey(
+@Entity(tableName = "exercise_description",
+        foreignKeys = @ForeignKey(
         entity = ExerciseGroup.class,
         parentColumns = "name",
         childColumns = "primaryMuscleName"
 ))
 public class ExerciseDescription {
     @PrimaryKey
+    @NonNull
     String name;
     String type;
 

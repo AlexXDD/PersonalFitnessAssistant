@@ -17,12 +17,12 @@ import androidx.room.PrimaryKey;
         )})
 public class Exercise {
     @PrimaryKey
-    Long id;
+    long id;
 
     //ExerciseDescription FK
     String exerciseDescriptionName;
     //WorkoutDay FK
-    Long workoutDayId;
+    long workoutDayId;
 
     public Exercise(Long id, String exerciseDescriptionName, Long workoutDayId) {
         this.id = id;
@@ -30,11 +30,11 @@ public class Exercise {
         this.workoutDayId = workoutDayId;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -46,11 +46,11 @@ public class Exercise {
         this.exerciseDescriptionName = exerciseDescriptionName;
     }
 
-    public Long getWorkoutDayId() {
+    public long getWorkoutDayId() {
         return workoutDayId;
     }
 
-    public void setWorkoutDayId(Long workoutDayId) {
+    public void setWorkoutDayId(long workoutDayId) {
         this.workoutDayId = workoutDayId;
     }
 }

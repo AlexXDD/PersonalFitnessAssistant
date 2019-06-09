@@ -10,17 +10,17 @@ import androidx.room.PrimaryKey;
         childColumns = "exerciseId"))
 public class Set {
     @PrimaryKey
-    Long id;
+    long id;
 
     //Foreign key
-    Long exerciseId;
+    long exerciseId;
 
-    Double weight;
-    Integer reps;
+    double weight;
+    int reps;
     //Rest time in seconds
-    Long restTime;
+    long restTime;
 
-    public Set(Long id, Long exerciseId, Double weight, Integer reps, Long restTime) {
+    public Set(long id, long exerciseId, Double weight, int reps, long restTime) {
         this.id = id;
         this.exerciseId = exerciseId;
         this.weight = weight;
@@ -28,19 +28,19 @@ public class Set {
         this.restTime = restTime;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public Long getExerciseId() {
+    public long getExerciseId() {
         return exerciseId;
     }
 
-    public void setExerciseId(Long exerciseId) {
+    public void setExerciseId(long exerciseId) {
         this.exerciseId = exerciseId;
     }
 
@@ -60,11 +60,11 @@ public class Set {
         this.reps = reps;
     }
 
-    public Long getRestTime() {
+    public long getRestTime() {
         return restTime;
     }
 
-    public void setRestTime(Long restTime) {
+    public void setRestTime(long restTime) {
         this.restTime = restTime;
     }
 }

@@ -11,6 +11,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.Executors;
 
 import ua.edu.nau.PersonalFitnesAssistant.dao.ExerciseDao;
+import ua.edu.nau.PersonalFitnesAssistant.dao.ExerciseDescriptionDao;
 import ua.edu.nau.PersonalFitnesAssistant.dao.ExerciseGroupDao;
 import ua.edu.nau.PersonalFitnesAssistant.dao.SetDao;
 import ua.edu.nau.PersonalFitnesAssistant.dao.TrainingDao;
@@ -18,6 +19,7 @@ import ua.edu.nau.PersonalFitnesAssistant.dao.UserParametersDao;
 import ua.edu.nau.PersonalFitnesAssistant.dao.WorkoutDayDao;
 import ua.edu.nau.PersonalFitnesAssistant.dao.WorkoutPlanDao;
 import ua.edu.nau.PersonalFitnesAssistant.model.Exercise;
+import ua.edu.nau.PersonalFitnesAssistant.model.ExerciseDescription;
 import ua.edu.nau.PersonalFitnesAssistant.model.ExerciseGroup;
 import ua.edu.nau.PersonalFitnesAssistant.model.Set;
 import ua.edu.nau.PersonalFitnesAssistant.model.Training;
@@ -29,6 +31,7 @@ import ua.edu.nau.PersonalFitnesAssistant.model.WorkoutPlan;
         UserParameters.class,
         Exercise.class,
         ExerciseGroup.class,
+        ExerciseDescription.class,
         Set.class, Training.class,
         WorkoutDay.class,
         WorkoutPlan.class
@@ -41,6 +44,8 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract ExerciseDao exerciseDao();
 
     public abstract ExerciseGroupDao exerciseGroupDao();
+
+    public abstract ExerciseDescriptionDao exerciseDescriptionDao();
 
     public abstract SetDao setDao();
 

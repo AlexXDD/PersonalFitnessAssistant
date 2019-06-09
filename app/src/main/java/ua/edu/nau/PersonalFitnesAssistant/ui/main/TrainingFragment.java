@@ -76,12 +76,12 @@ public class TrainingFragment extends Fragment {
             mContext = getActivity().getApplicationContext();
 
         //Creating stub data for debug
-        workoutPlan = new WorkoutPlan(1L, "Chest, Arms");
+        workoutPlan = new WorkoutPlan(1L, "Bulking");
 
         workoutDays = new ArrayList<>();
-        workoutDays.add(new WorkoutDay(2L, 1L, 120, 1));
-        workoutDays.add(new WorkoutDay(3L, 1L, 120, 2));
-        workoutDays.add(new WorkoutDay(4L, 1L, 120, 3));
+        workoutDays.add(new WorkoutDay(1L, "Chest, Arms", 120, 1));
+        workoutDays.add(new WorkoutDay(1L, "Legs, Back", 120, 2));
+        workoutDays.add(new WorkoutDay(1L, "Shoulders, Core", 120, 3));
 
 
     }
@@ -97,6 +97,7 @@ public class TrainingFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         listView = view.findViewById(R.id.listView_workout_days);
         adapter = new WorkoutDayArrayAdapter(mContext, workoutDays);
+        listView.setAdapter(adapter);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
