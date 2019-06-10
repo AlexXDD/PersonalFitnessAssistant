@@ -2,7 +2,6 @@ package ua.edu.nau.PersonalFitnesAssistant.ui.main;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -10,6 +9,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 
 import ua.edu.nau.PersonalFitnesAssistant.R;
+import ua.edu.nau.PersonalFitnesAssistant.adapters.SectionsPagerAdapter;
 
 public class MainActivity extends AppCompatActivity implements TrainingFragment.OnFragmentInteractionListener, ExercisesFragment.OnFragmentInteractionListener, ProgressFragment.OnFragmentInteractionListener {
 
@@ -32,8 +32,4 @@ public class MainActivity extends AppCompatActivity implements TrainingFragment.
 
     }
 
-    //Method for adding new workout day to current workout plan
-    public void onAddNewWorkoutDayButtonClick(View view) {
-
-    }
 }

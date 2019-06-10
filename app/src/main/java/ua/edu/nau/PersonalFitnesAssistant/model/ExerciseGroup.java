@@ -9,9 +9,11 @@ public class ExerciseGroup {
     @PrimaryKey
     @NonNull
     String name;
+    int imageResourceId;
 
-    public ExerciseGroup(@NonNull String name) {
+    public ExerciseGroup(@NonNull String name, int imageResourceId) {
         this.name = name;
+        this.imageResourceId = imageResourceId;
     }
 
     public String getName() {
@@ -20,5 +22,13 @@ public class ExerciseGroup {
 
     public void setName(@NonNull String name) {
         this.name = name;
+    }
+
+    public int getImageResourceId() {
+        return imageResourceId;
+    }
+
+    public void setImageResourceId(int imageResourceId) {
+        this.imageResourceId = imageResourceId;
     }
 }

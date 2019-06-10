@@ -10,7 +10,7 @@
         android:id="@+id/listView_workout_days"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#C8E6C9"
+        android:layout_marginBottom="50dp"
         android:footerDividersEnabled="true"
         android:headerDividersEnabled="true"
         android:padding="10dp"
@@ -26,27 +26,15 @@
         android:layout_height="32dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="54dp"
+        android:layout_marginBottom="56dp"
         android:contentDescription="@string/add_workout_day_text"
         android:gravity="center"
-        android:onClick="onAddNewWorkoutDayButtonClick"
         android:paddingTop="0dp"
         android:paddingBottom="0dp"
         android:text="@string/add_workout_day_text"
         android:textAlignment="center"
         app:icon="@drawable/ic_add_circle_outline_black_24dp"
         app:iconPadding="16dp"
-        app:layout_anchor="@+id/listView_workout_days"
-        app:layout_anchorGravity="bottom|center" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:background="#FFF"
-        android:padding="15dp"
-        android:text="AD BANNER STUB"
-        android:textAlignment="center"
         app:layout_anchor="@+id/listView_workout_days"
         app:layout_anchorGravity="bottom|center" />
 

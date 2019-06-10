@@ -6,10 +6,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.util.ArrayList;
+
 import ua.edu.nau.PersonalFitnesAssistant.R;
+import ua.edu.nau.PersonalFitnesAssistant.adapters.ExerciseGroupGridViewAdapter;
+import ua.edu.nau.PersonalFitnesAssistant.model.ExerciseGroup;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,6 +37,9 @@ public class ExercisesFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+    private Context mContext;
+    private GridView gridView;
+    private ArrayList<ExerciseGroup> exerciseGroups;
 
     public ExercisesFragment() {
         // Required empty public constructor
@@ -58,6 +68,18 @@ public class ExercisesFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        if (getActivity() != null)
+            mContext = getActivity().getApplicationContext();
+
+        exerciseGroups = new ArrayList<>();
+        exerciseGroups.add(new ExerciseGroup("Chest", R.drawable.ic_chest_exercise_group));
+        exerciseGroups.add(new ExerciseGroup("Biceps", R.drawable.ic_biceps_exercise_group));
+        exerciseGroups.add(new ExerciseGroup("Calves", R.drawable.ic_calves_exercise_group));
+        exerciseGroups.add(new ExerciseGroup("Core", R.drawable.ic_core_exercise_group));
+        exerciseGroups.add(new ExerciseGroup("Legs", R.drawable.ic_legs_exercise_group));
+        exerciseGroups.add(new ExerciseGroup("Lower Back", R.drawable.ic_lower_back_exercise_group));
+        exerciseGroups.add(new ExerciseGroup("Upper Back", R.drawable.ic_upper_back_exercise_group));
+        exerciseGroups.add(new ExerciseGroup("Shoulders", R.drawable.ic_shoulders_exercise_group));
     }
 
     @Override
@@ -65,6 +87,14 @@ public class ExercisesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_exercises, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        gridView = (GridView) view.findViewById(R.id.gridViewExercises);
+
+        ExerciseGroupGridViewAdapter adapter = new ExerciseGroupGridViewAdapter(mContext, exerciseGroups);
+        gridView.setAdapter(adapter);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

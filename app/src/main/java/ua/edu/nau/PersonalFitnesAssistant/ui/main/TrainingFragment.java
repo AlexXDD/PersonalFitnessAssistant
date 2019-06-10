@@ -77,17 +77,14 @@ public class TrainingFragment extends Fragment {
 //        }
         if (getActivity() != null)
             mContext = getActivity().getApplicationContext();
-
-        //Creating stub data for debug
         workoutPlan = new WorkoutPlan(1L, "Bulking split");
-
         workoutDays = new ArrayList<>();
         workoutDays.add(new WorkoutDay(1L, "Chest, Arms", 120, 1));
-        workoutDays.add(new WorkoutDay(1L, "Legs, Back", 120, 2));
-        workoutDays.add(new WorkoutDay(1L, "Shoulders, Core", 120, 3));
-        workoutDays.add(new WorkoutDay(1L, "Chest, Arms", 120, 1));
-        workoutDays.add(new WorkoutDay(1L, "Legs, Back", 120, 2));
-        workoutDays.add(new WorkoutDay(1L, "Shoulders, Core", 120, 3));
+        workoutDays.add(new WorkoutDay(1L, "Legs, Back", 110, 2));
+        workoutDays.add(new WorkoutDay(1L, "Shoulders, Core", 122, 3));
+        workoutDays.add(new WorkoutDay(1L, "Chest, Arms", 130, 4));
+        workoutDays.add(new WorkoutDay(1L, "Legs, Back", 126, 5));
+        workoutDays.add(new WorkoutDay(1L, "Shoulders, Core", 111, 6));
 
 
     }

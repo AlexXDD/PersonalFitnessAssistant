@@ -1,4 +1,4 @@
-package ua.edu.nau.PersonalFitnesAssistant.ui.main;
+package ua.edu.nau.PersonalFitnesAssistant.adapters;
 
 import android.content.Context;
 
@@ -9,6 +9,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import ua.edu.nau.PersonalFitnesAssistant.R;
+import ua.edu.nau.PersonalFitnesAssistant.ui.main.ExercisesFragment;
+import ua.edu.nau.PersonalFitnesAssistant.ui.main.ProgressFragment;
+import ua.edu.nau.PersonalFitnesAssistant.ui.main.TrainingFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
