@@ -27,7 +27,6 @@
         android:text="AD BANNER STUB"
         android:textAlignment="center"
         android:textColor="#000"
-        app:layout_anchor="@+id/view_pager"
         app:layout_anchorGravity="bottom|center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
