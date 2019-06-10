@@ -57,6 +57,7 @@ public class ExerciseGroupGridViewAdapter extends ArrayAdapter<ExerciseGroup> {
         return result;
     }
 
+
     // View lookup cache
     private static class ViewHolder {
         TextView txtGroupName;
