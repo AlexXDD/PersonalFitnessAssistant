@@ -45,9 +45,12 @@ public class WorkoutDayArrayAdapter extends ArrayAdapter<WorkoutDay> {
             viewHolder.imgReps = (ImageView) convertView.findViewById(R.id.imageView_reps);
             viewHolder.imgTime = (ImageView) convertView.findViewById(R.id.imageView_time);
 
+            ((ViewGroup) convertView).setDescendantFocusability(ViewGroup.FOCUS_BLOCK_DESCENDANTS);
+
             result = convertView;
             convertView.setTag(viewHolder);
         } else {
+
             viewHolder = (ViewHolder) convertView.getTag();
             result = convertView;
         }

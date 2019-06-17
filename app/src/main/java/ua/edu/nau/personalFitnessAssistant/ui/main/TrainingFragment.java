@@ -1,11 +1,13 @@
 package ua.edu.nau.personalFitnessAssistant.ui.main;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -19,6 +21,7 @@ import ua.edu.nau.personalFitnessAssistant.R;
 import ua.edu.nau.personalFitnessAssistant.model.WorkoutDay;
 import ua.edu.nau.personalFitnessAssistant.model.WorkoutPlan;
 import ua.edu.nau.personalFitnessAssistant.ui.adapters.WorkoutDayArrayAdapter;
+import ua.edu.nau.personalFitnessAssistant.ui.workoutDayExercises.WorkoutDayExercisesActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,7 +41,7 @@ public class TrainingFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private static WorkoutDayArrayAdapter adapter;
+    private WorkoutDayArrayAdapter adapter;
 
     private OnFragmentInteractionListener mListener;
     private Context mContext;
@@ -108,7 +111,15 @@ public class TrainingFragment extends Fragment {
 
         //Adding header to listView
         listView.addHeaderView(headerView);
+
         adapter = new WorkoutDayArrayAdapter(mContext, workoutDays);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), WorkoutDayExercisesActivity.class);
+                startActivity(intent);
+            }
+        });
         listView.setAdapter(adapter);
     }
 

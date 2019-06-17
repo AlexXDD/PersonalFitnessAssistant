@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -94,6 +96,14 @@ public class ExercisesFragment extends Fragment {
         gridView = (GridView) view.findViewById(R.id.gridViewExercises);
 
         ExerciseGroupGridViewAdapter adapter = new ExerciseGroupGridViewAdapter(mContext, exerciseGroups);
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(mContext, "it works", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         gridView.setAdapter(adapter);
     }
 

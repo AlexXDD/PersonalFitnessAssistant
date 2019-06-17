@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:clickable="false"
+    android:descendantFocusability="blocksDescendants"
     android:orientation="horizontal">
 
     <LinearLayout
@@ -37,9 +39,10 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:backgroundTint="#00FFFFFF"
+        android:focusable="false"
         android:text="@string/change_plan_btn_text"
-        android:textColor="@color/colorPrimary"
         android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         tools:text="Change Plan" />
 </LinearLayout>

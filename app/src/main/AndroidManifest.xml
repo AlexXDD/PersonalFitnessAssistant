@@ -9,11 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="ua.edu.nau.personalFitnessAssistant.ui.training.TrainingActivity"></activity>
-        <activity android:name="ua.edu.nau.personalFitnessAssistant.ui.exercises.ExercisesActivity" />
-        <activity android:name="ua.edu.nau.personalFitnessAssistant.ui.workoutDay.WorkoutDayActivity" />
+        <activity android:name=".ui.workoutDayExercises.WorkoutDayExercisesActivity"></activity>
         <activity
-            android:name="ua.edu.nau.personalFitnessAssistant.ui.main.MainActivity"
+            android:name=".ui.training.TrainingActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.exercises.ExercisesActivity" />
+        <activity android:name=".ui.workoutDay.WorkoutDayActivity" />
+        <activity
+            android:name=".ui.main.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
